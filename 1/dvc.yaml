@@ -1,7 +1,13 @@
 stages:
   download data:
-    cmd: python download.py
+    cmd: python download.py && rm data/New_York_City_.png
     deps:
       - download.py
     outs:
-      - data
+      - data/AB_NYC_2019.csv
+  tail data for hdfs:
+    cmd: tail -n+2 data/AB_NYC_2019.csv > data/data.csv
+    deps:
+      - data/AB_NYC_2019.csv
+    outs:
+      - data/data.csv
