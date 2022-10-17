@@ -3,12 +3,14 @@ import sys
 PRICE_IDX = 9
 
 
-def main(sys=sys):
-    prices = []
+def main():
+    sum_price: int = 0
+    prices_count = 0
     for line in sys.stdin:
-        prices.append(int(line.split(',')[PRICE_IDX]))
-    mean = sum(prices) / len(prices)
-    sys.stdout.write(str(mean) + '\n')
+        sum_price += int(line.split(',')[PRICE_IDX])
+        prices_count += 1
+    mean = sum_price / prices_count
+    sys.stdout.write(f'{mean},{prices_count}\n')
 
 
 if __name__ == '__main__':
