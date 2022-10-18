@@ -25,14 +25,11 @@ services:
     restart: always
     volumes:
       - hadoop_datanode1:/hadoop/dfs/data
-      - ${PWD}:/usr/src/app
       - python:/opt/python
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
       - ./hadoop.env
-#    entrypoint: bash /usr/src/app/entrypoint.sh
-#    command: ""
 
   datanode2:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
@@ -40,14 +37,11 @@ services:
     restart: always
     volumes:
       - hadoop_datanode2:/hadoop/dfs/data
-      - ${PWD}:/usr/src/app
       - python:/opt/python
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
       - ./hadoop.env
-#    entrypoint: bash /usr/src/app/entrypoint.sh
-#    command: ""
 
   datanode3:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
@@ -55,10 +49,7 @@ services:
     restart: always
     volumes:
       - hadoop_datanode3:/hadoop/dfs/data
-      - ${PWD}:/usr/src/app
       - python:/opt/python
-#    entrypoint: bash /usr/src/app/entrypoint.sh
-#    command: ""
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
@@ -75,10 +66,7 @@ services:
     ports:
       - 8088:8088
     volumes:
-      - ${PWD}:/usr/src/app
       - python:/opt/python
-#    entrypoint: bash /usr/src/app/entrypoint.sh
-#    command: ""
 
   nodemanager1:
     image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
@@ -89,11 +77,8 @@ services:
     env_file:
       - ./hadoop.env
     volumes:
-      - ${PWD}:/usr/src/app
       - python:/opt/python
-#    entrypoint: bash /usr/src/app/entrypoint.sh
-#    command: ""
-  
+
   historyserver:
     image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
     container_name: historyserver
@@ -102,12 +87,9 @@ services:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864 resourcemanager:8088"
     volumes:
       - hadoop_historyserver:/hadoop/yarn/timeline
-      - ${PWD}:/usr/src/app
       - python:/opt/python
     env_file:
       - ./hadoop.env
-#    entrypoint: bash /usr/src/app/entrypoint.sh
-#    command: ""
 
 volumes:
   hadoop_namenode:
