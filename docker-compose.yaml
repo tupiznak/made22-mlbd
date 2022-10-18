@@ -10,14 +10,10 @@ services:
       - 9000:9000
     volumes:
       - hadoop_namenode:/hadoop/dfs/name
-      - ${PWD}:/usr/src/app
-      - python:/opt/python
     environment:
       - CLUSTER_NAME=test
     env_file:
       - ./hadoop.env
-    entrypoint: bash /usr/src/app/entrypoint.sh
-    command: ""
 
   datanode1:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
@@ -25,7 +21,6 @@ services:
     restart: always
     volumes:
       - hadoop_datanode1:/hadoop/dfs/data
-      - python:/opt/python
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
@@ -37,7 +32,6 @@ services:
     restart: always
     volumes:
       - hadoop_datanode2:/hadoop/dfs/data
-      - python:/opt/python
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
@@ -49,7 +43,6 @@ services:
     restart: always
     volumes:
       - hadoop_datanode3:/hadoop/dfs/data
-      - python:/opt/python
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
@@ -65,8 +58,6 @@ services:
       - ./hadoop.env
     ports:
       - 8088:8088
-    volumes:
-      - python:/opt/python
 
   nodemanager1:
     image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
@@ -77,7 +68,10 @@ services:
     env_file:
       - ./hadoop.env
     volumes:
-      - python:/opt/python
+      - ${PWD}:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: bash /usr/src/app/entrypoint.sh
+    command: ""
 
   historyserver:
     image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
@@ -87,7 +81,6 @@ services:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864 resourcemanager:8088"
     volumes:
       - hadoop_historyserver:/hadoop/yarn/timeline
-      - python:/opt/python
     env_file:
       - ./hadoop.env
 
@@ -97,4 +90,3 @@ volumes:
   hadoop_datanode2:
   hadoop_datanode3:
   hadoop_historyserver:
-  python:
