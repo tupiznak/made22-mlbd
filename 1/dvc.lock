@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  download data:
+    cmd: python download.py && rm data/New_York_City_.png
+    deps:
+    - path: download.py
+      md5: 25367b933d7e0724af1c98689038f964
+      size: 779
+    outs:
+    - path: data/AB_NYC_2019.csv
+      md5: f772a1d8d29bae6e7a9beac0ae880a2b
+      size: 7077973
+  tail data for hdfs:
+    cmd: tail -n+2 data/AB_NYC_2019.csv > data/data.csv
+    deps:
+    - path: data/AB_NYC_2019.csv
+      md5: f772a1d8d29bae6e7a9beac0ae880a2b
+      size: 7077973
+    outs:
+    - path: data/data.csv
+      md5: d858df41274d5051bf6e6652bda6a6f8
+      size: 7077767

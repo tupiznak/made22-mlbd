@@ -1,0 +1,6 @@
+kaggle
+numpy
+dvc
+pandas
+click
+pytest
