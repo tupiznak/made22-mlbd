@@ -24,6 +24,15 @@
     #. Зайти в докер namenode, запустить `./run_pipe`
     #. Запустить `. ./venv/bin/activate`
     #. Запустить `python a.py`
+    #. Запустить `python b.py`
+    #. Запустить `python c.py`
+    #. Запустить `python d.py`
+#. Ответы находятся в файле `results.txt`
+    #. 517126254
+    #. seen live
+    #. ['Karma', 'Eden', 'Nemesis', 'Joy', 'Angel', 'Spectrum', 'Indigo', 'Aura', 'Mirage', 'Jade']
+    #. ['united states', 'united kingdom', 'germany', 'japan', 'france', 'sweden', 'russia', 'italy', 'canada', 'spain']
+
 
 
 

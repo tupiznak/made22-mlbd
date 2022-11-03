@@ -7,7 +7,7 @@ if __name__ == '__main__':
     SELECT lower(trim(tag)) as new_tag, count(*) AS cnt FROM artists 
     LATERAL VIEW explode(split(tags_lastfm,'[\;]') ) tmpTable AS tag
     WHERE tag != ''
-    GROUP BY tag
+    GROUP BY lower(trim(tag))
     ORDER BY cnt DESC
     LIMIT 1
     """
