@@ -27,7 +27,7 @@
     #. Запустить `python b.py`
     #. Запустить `python c.py`
     #. Запустить `python d.py`
-#. Ответы находятся в файле `results.txt`
+#. Ответы находятся в файле `results.txt`, скриншоты в папке `screenshots`
     #. 517126254
     #. seen live
     #. ['Karma', 'Eden', 'Nemesis', 'Joy', 'Angel', 'Spectrum', 'Indigo', 'Aura', 'Mirage', 'Jade']
