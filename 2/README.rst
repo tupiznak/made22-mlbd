@@ -30,7 +30,7 @@
 #. Ответы находятся в файле `results.txt`, скриншоты в папке `screenshots`
     #. The Beatles
     #. seen live
-    #. ['Karma', 'Eden', 'Nemesis', 'Joy', 'Angel', 'Spectrum', 'Indigo', 'Aura', 'Mirage', 'Jade']
+    #. {'alternative': 'Radiohead', 'electronic': 'Radiohead', 'experimental': 'Radiohead', 'indie': 'Radiohead', 'seen live': 'Radiohead', 'female vocalists': 'Lady Gaga', 'pop': 'The Beatles', 'rock': 'The Beatles', 'all': 'Metallica', 'under 2000 listeners': 'Joyce Manor'}
     #. ['united states', 'united kingdom', 'germany', 'japan', 'france', 'sweden', 'russia', 'italy', 'canada', 'spain']
 
 

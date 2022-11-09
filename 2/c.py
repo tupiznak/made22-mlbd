@@ -17,12 +17,16 @@ if __name__ == '__main__':
       LIMIT 10
     )
     
-    SELECT A.artist_lastfm, count(*) AS cnt FROM artists A
-    INNER JOIN TOP_TAGS B ON A.tags_lastfm!='' AND instr(lower(A.tags_lastfm), B.new_tag) > 0
-    GROUP BY A.artist_lastfm
-    ORDER BY cnt DESC
-    LIMIT 10
+    SELECT C.new_tag, D.artist_lastfm FROM artists D
+    INNER JOIN (
+      SELECT A.new_tag, max(B.scrobbles_lastfm) as top_scrobble
+      FROM TOP_TAGS A
+      INNER JOIN artists B 
+      ON B.tags_lastfm!='' AND instr(lower(B.tags_lastfm), A.new_tag) > 0
+      GROUP BY A.new_tag
+      ) as C
+    ON D.scrobbles_lastfm = C.top_scrobble
     """
     cursor.execute(query)
-    result = [row[0] for row in cursor.fetchall()]
+    result = {row[0]:row[1] for row in cursor.fetchall()}
     print(result)
