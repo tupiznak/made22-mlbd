@@ -18,7 +18,7 @@ if __name__ == '__main__':
     )
     
     SELECT A.artist_lastfm, count(*) AS cnt FROM artists A
-    CROSS JOIN TOP_TAGS B ON A.tags_lastfm!='' AND instr(lower(A.tags_lastfm), B.new_tag) > 0
+    INNER JOIN TOP_TAGS B ON A.tags_lastfm!='' AND instr(lower(A.tags_lastfm), B.new_tag) > 0
     GROUP BY A.artist_lastfm
     ORDER BY cnt DESC
     LIMIT 10

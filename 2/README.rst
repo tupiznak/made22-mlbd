@@ -28,7 +28,7 @@
     #. Запустить `python c.py`
     #. Запустить `python d.py`
 #. Ответы находятся в файле `results.txt`, скриншоты в папке `screenshots`
-    #. 517126254
+    #. The Beatles
     #. seen live
     #. ['Karma', 'Eden', 'Nemesis', 'Joy', 'Angel', 'Spectrum', 'Indigo', 'Aura', 'Mirage', 'Jade']
     #. ['united states', 'united kingdom', 'germany', 'japan', 'france', 'sweden', 'russia', 'italy', 'canada', 'spain']
