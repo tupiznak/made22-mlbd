@@ -92,10 +92,10 @@ class ModelTest extends AnyFunSuite {
       (yp, yt) => assert(yt === yp +- 1e-6)
     )
 
-//    new File(fileXTrain).delete()
-//    new File(fileXTest).delete()
-//    new File(fileTargets).delete()
-//    new File(filePredict).delete()
-//    new File(fileModel).delete()
+    new File(fileXTrain).delete()
+    new File(fileXTest).delete()
+    new File(fileTargets).delete()
+    new File(filePredict).delete()
+    new File(fileModel).delete()
   }
 }
