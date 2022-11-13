@@ -1,4 +1,4 @@
-import breeze.linalg.{*, DenseMatrix, convert, zipValues}
+import breeze.linalg.{DenseMatrix, convert}
 import org.scalactic.Tolerance.convertNumericToPlusOrMinusWrapper
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -41,8 +41,8 @@ class ModelTest extends AnyFunSuite {
   }
 
   test("Model.integration") {
-    val fileXTrain = Files.createTempFile("test_x_test", ".csv").toString
-    val fileXTest = Files.createTempFile("test_x_train", ".csv").toString
+    val fileXTrain = Files.createTempFile("test_x_train", ".csv").toString
+    val fileXTest = Files.createTempFile("test_x_test", ".csv").toString
     val fileTargets = Files.createTempFile("test_targets", ".csv").toString
     val filePredict = Files.createTempFile("test_predict", ".csv").toString
     val fileModel = Files.createTempFile("test_model", ".csv").toString
@@ -92,10 +92,10 @@ class ModelTest extends AnyFunSuite {
       (yp, yt) => assert(yt === yp +- 1e-6)
     )
 
-    new File(fileXTrain).delete()
-    new File(fileXTest).delete()
-    new File(fileTargets).delete()
-    new File(filePredict).delete()
-    new File(fileModel).delete()
+//    new File(fileXTrain).delete()
+//    new File(fileXTest).delete()
+//    new File(fileTargets).delete()
+//    new File(filePredict).delete()
+//    new File(fileModel).delete()
   }
 }
