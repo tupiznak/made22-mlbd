@@ -1,0 +1,4 @@
+a) The Beatles
+b) seen live
+c) {'alternative': 'Radiohead', 'electronic': 'Radiohead', 'experimental': 'Radiohead', 'indie': 'Radiohead', 'seen live': 'Radiohead', 'female vocalists': 'Lady Gaga', 'pop': 'The Beatles', 'rock': 'The Beatles', 'all': 'Metallica', 'under 2000 listeners': 'Joyce Manor'}
+d) ['united states', 'united kingdom', 'germany', 'japan', 'france', 'sweden', 'russia', 'italy', 'canada', 'spain']

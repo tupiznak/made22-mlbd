@@ -1,0 +1,12 @@
+schema: '2.0'
+stages:
+  download data:
+    cmd: python download.py
+    deps:
+    - path: download.py
+      md5: 281ebf354e9270f3d5b67be9354be15f
+      size: 773
+    outs:
+    - path: data/artists.csv
+      md5: 50ac7835723db3138426aeaef7d91e2f
+      size: 201103324

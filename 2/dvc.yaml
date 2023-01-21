@@ -1,0 +1,7 @@
+stages:
+  download data:
+    cmd: python download.py
+    deps:
+      - download.py
+    outs:
+      - data/artists.csv
